@@ -1,0 +1,12 @@
+{
+  "rules": {
+    "semi": [
+      "error",
+      "always"
+    ],
+    "no-unused-vars": "error",
+    "no-extra-semi": "error",
+    "eqeqeq": "error",
+    "camelcase": "error"
+  }
+}
