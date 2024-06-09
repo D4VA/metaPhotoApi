@@ -24,4 +24,4 @@ jobs:
         run: npm install --production
 
       - name: Start API Server
-        run: node src/server.js
+        run: node --experimental-modules src/server.js &
