@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "eslint": "eslint ./**/*.{js,jsx}"
+    "eslint": "eslint ./**/*.{js,jsx}",
+    "build": "babel src -d dist"
   },
   "keywords": [],
   "author": "dav4",
