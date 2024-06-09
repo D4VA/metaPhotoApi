@@ -35,6 +35,7 @@ const combineData = (photos, usersMap, albumsMap, photoId = null) => {
 };
 
 export const searchTitleData = async (req, res) => {
+  res.header('Access-Control-Allow-Origin', '*');
   let { title, 'album.title': albumTitle, 'album.user.email': userEmail, limit, offset } = req.query;
 
   limit = limit ? parseInt(limit, 10) : 25;
@@ -63,43 +64,22 @@ export const searchTitleData = async (req, res) => {
       filteredPhotos = filteredPhotos.filter(photo => {
         const album = albumsMap.get(photo.albumId);
         const user = usersMap.get(album.userId);
-        return user && user.email.toLowerCase() === userEmail.toLowerCase();
+        return user && user.email.toLowerCase().includes(userEmail.toLowerCase());
       });
     }
 
-    // Aplicar límite y desplazamiento
+    const totalFiltered = filteredPhotos.length;
     const paginatedPhotos = filteredPhotos.slice(offset, offset + limit);
-
     const combinedData = combineData(paginatedPhotos, usersMap, albumsMap);
-    res.json(combinedData);
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-};
-
-export const searchByAlbumTitle = async (req, res) => {
-  const { 'album.title': albumTitle } = req.query;
-
-  try {
-    const [photos, albums] = await Promise.all([fetchPhotos(), fetchAlbums()]);
-
-    // Filter albums by title
-    const filteredAlbums = albums.filter(album => album.title.toLowerCase().includes(albumTitle.toLowerCase()));
-
-    // Get IDs of filtered albums
-    const filteredAlbumIds = new Set(filteredAlbums.map(album => album.id));
-
-    // Filter photos by filtered album IDs
-    const filteredPhotos = photos.filter(photo => filteredAlbumIds.has(photo.albumId));
-
-    // Return the filtered photos as response
-    res.json(filteredPhotos);
+    
+    res.json({ data: combinedData, total: totalFiltered });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 };
 
 export const getCombinedDataById = async (req, res) => {
+  res.header('Access-Control-Allow-Origin', '*');
   const photoId = parseInt(req.params.id, 10);
 
   try {
