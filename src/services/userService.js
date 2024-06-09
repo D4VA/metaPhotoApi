@@ -7,6 +7,6 @@ export const fetchUsers = async () => {
     return response.data;
 
   } catch (error) {
-    throw new Error('Error fetching users');
+    throw new Error(`Error fetching users ${error}`);
   }
 };

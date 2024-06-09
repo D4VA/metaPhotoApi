@@ -7,6 +7,6 @@ export const fetchAlbums = async () => {
     return response.data;
 
   } catch (error) {
-    throw new Error('Error fetching albums');
+    throw new Error(`Error fetching albums ${error}`);
   }
 };

@@ -7,6 +7,6 @@ export const fetchPhotos = async () => {
     return response.data;
 
   } catch (error) {
-    throw new Error('Error fetching photos');
+    throw new Error(`Error fetching photos ${error}`);
   }
 };
