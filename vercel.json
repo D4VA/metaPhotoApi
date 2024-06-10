@@ -11,7 +11,9 @@
       "src": "/api/photos",
       "methods": ["GET"],
       "headers": {
-        "Access-Control-Allow-Origin": "*"
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, OPTIONS",
+        "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"
       },
       "dest": "/src/server.js"
     },
