@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
 
 jobs:
   build:
@@ -34,4 +31,14 @@ jobs:
         run: npm run build
 
       - name: Start Server
-        run: npm run start
+        run: npm run start:ci
+
+      - name: Wait for server to start
+        run: sleep 10
+
+      - name: Stop Server
+        run: |
+          pid=$(lsof -t -i:3000)
+          if [ -n "$pid" ]; then
+            kill -TERM $pid
+          fi

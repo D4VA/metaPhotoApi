@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"No tests specified\"",
     "start": "node src/server.js",
+    "start:ci": "node src/server.js &",
     "eslint": "eslint ./**/*.{js,jsx}",
     "build": "babel src -d dist"
   },
