@@ -8,8 +8,17 @@
   ],
   "routes": [
     {
+      "src": "/api/photos",
+      "methods": ["GET"],
+      "headers": {
+        "Access-Control-Allow-Origin": "*"
+      },
+      "dest": "/src/server.js"
+    },
+    {
       "src": "/(.*)",
       "dest": "/src/server.js"
     }
   ]
 }
+En este e
