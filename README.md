@@ -44,7 +44,14 @@ Devuelve una lista de fotos combinadas con datos de álbumes y usuarios. Puedes 
 
 ### `GET /api/photos/:id`
 
+```
+http://localhost:3000/photos?title=repudiandae%20iusto
+```
+
 Devuelve una foto específica combinada con datos de álbumes y usuarios según su ID.
+```
+  http://localhost:3000/api/photos/1,
+```
 
 ## Estructura del Proyecto
 
