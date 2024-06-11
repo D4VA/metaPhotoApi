@@ -26,12 +26,12 @@ export const searchTitleData = async (req, res) => {
         return album && album.title.toLowerCase().includes(albumTitle.toLowerCase());
       });
     }
-
+    
     if (userEmail) {
       filteredPhotos = filteredPhotos.filter(photo => {
         const album = albumsMap.get(photo.albumId);
         const user = usersMap.get(album.userId);
-        return user && user.email.toLowerCase().includes(userEmail.toLowerCase());
+        return user && user.email.toLowerCase() === userEmail.toLowerCase();
       });
     }
 
