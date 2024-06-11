@@ -21,13 +21,6 @@ Este es un proyecto de API desarrollado en Node.js utilizando Express. Proporcio
     ```
     npm install
     ```
-
-4. Si estás utilizando componentes de NextUI en tu aplicación, instálalos con npm.
-
-    ```
-    npm i @nextui-org/react framer-motion
-    ```
-
 ## Uso
 
 Para iniciar el servidor de la API, utiliza el siguiente comando:
@@ -60,17 +53,8 @@ El proyecto sigue una estructura estándar de Express:
 ## Dependencias
 
 - express: Framework web para Node.js.
-- framer-motion: Librería de animaciones para React.
-- react: Biblioteca de JavaScript para construir interfaces de usuario.
-- react-dom: Encargado de manejar los componentes de React en el navegador.
 
 ## Dependencias de Desarrollo
-
-- @types/react: Tipos TypeScript para React.
-- eslint: Herramienta para identificar y reportar patrones de código.
-- postcss: Procesador de CSS con soporte para varios plugins.
-- tailwindcss: Framework de CSS utilitario de primera clase.
-- vite: Herramienta de compilación rápida para desarrollo web.
 
 
 ## Licencia
