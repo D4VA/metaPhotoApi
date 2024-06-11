@@ -42,11 +42,12 @@ Esto iniciará el servidor Express y la API estará disponible en [http://localh
 
 Devuelve una lista de fotos combinadas con datos de álbumes y usuarios. Puedes filtrar los resultados por título de foto, título de álbum y correo electrónico del usuario. Los parámetros opcionales son `title`, `album.title`, `album.user.email`, `limit` y `offset`.
 
-### `GET /api/photos/:id`
-
 ```
 http://localhost:3000/photos?title=repudiandae%20iusto
+http://localhost:3000/api/photos?album.title=quidem&limit=10&offset=50
 ```
+
+### `GET /api/photos/:id`
 
 Devuelve una foto específica combinada con datos de álbumes y usuarios según su ID.
 ```
