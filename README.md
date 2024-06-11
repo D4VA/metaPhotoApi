@@ -1,6 +1,6 @@
 # MetaPhotoApp API
 
-Este es un proyecto de API desarrollado en Node.js utilizando Express. Proporciona endpoints para buscar y acceder a datos combinados de fotos, usuarios y álbumes.
+Este es un proyecto de API que consume un API extenar y ordena el llamado de 3 endpoints desarrollada en Node.js utilizando Express. Proporciona endpoints para buscar y acceder a datos combinados de fotos, usuarios y álbumes.
 
 ## Instalación
 
@@ -21,6 +21,7 @@ Este es un proyecto de API desarrollado en Node.js utilizando Express. Proporcio
     ```
     npm install
     ```
+
 ## Uso
 
 Para iniciar el servidor de la API, utiliza el siguiente comando:
@@ -52,10 +53,20 @@ El proyecto sigue una estructura estándar de Express:
 
 ## Dependencias
 
-- express: Framework web para Node.js.
+### Dependencias de Producción
 
-## Dependencias de Desarrollo
+- **express**: Framework web para Node.js.
+- **cors**: Middleware de Express para habilitar el control de acceso CORS (Cross-Origin Resource Sharing).
+- **axios**: Cliente HTTP basado en promesas para el navegador y Node.js.
 
+### Dependencias de Desarrollo
+
+- **@babel/cli**: Herramienta de línea de comandos para Babel.
+- **@babel/core**: Núcleo de Babel para compilar el código ECMAScript 2015+ en una versión anterior de JavaScript.
+- **@babel/preset-env**: Conjunto de plugins de Babel que permite utilizar las últimas características de JavaScript.
+- **@eslint/js**: Paquete compartido para las reglas de ESLint.
+- **eslint**: Herramienta de análisis de código estático para identificar patrones problemáticos en el código JavaScript.
+- **globals**: Conjunto de variables globales comunes para diferentes entornos de ejecución.
 
 ## Licencia
 
