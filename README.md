@@ -2,6 +2,10 @@
 
 Este es un proyecto de API que consume un API extenar y ordena el llamado de 3 endpoints desarrollada en Node.js utilizando Express. Proporciona endpoints para buscar y acceder a datos combinados de fotos, usuarios y álbumes.
 
+## Requisitos
+
+- Node.js >= 20.13.1
+  
 ## Instalación
 
 1. Clona este repositorio en tu máquina local.
